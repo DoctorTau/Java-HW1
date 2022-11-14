@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ConsonantsAndVowels {
     static Scanner in = new Scanner(System.in);
 
-    static int[] countConsonantsAndVowels(String s) {
+    static Pair<Integer, Integer> countConsonantsAndVowels(String s) {
         int consonants = 0, vowels = 0;
         for (int i = 0; i < s.length(); i++) {
             char letter = Character.toLowerCase(s.charAt(i));
@@ -14,15 +14,15 @@ public class ConsonantsAndVowels {
             }
         }
 
-        return new int[] { consonants, vowels };
+        return new Pair<Integer, Integer>(consonants, vowels);
     }
 
     public static void main(String[] args) {
         String word;
         word = in.nextLine();
 
-        int[] consonantsVowels = countConsonantsAndVowels(word);
+        Pair<Integer, Integer> consonantsVowels = countConsonantsAndVowels(word);
 
-        System.out.println("Vowels: " + consonantsVowels[1] + "\nConsonants: " + consonantsVowels[0]);
+        System.out.println("Vowels: " + consonantsVowels.second + "\nConsonants: " + consonantsVowels.first);
     }
 }
